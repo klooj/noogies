@@ -1,7 +1,5 @@
 local vg = vim.g
 
-vg.colors_name = 'noogie'
-
 local Group = require('colorbuddy.group').Group
 local colors = require('colorbuddy.color').colors
 local styles = require('colorbuddy.style').styles
@@ -15,28 +13,9 @@ local rev = styles.reverse
 local nostyle = styles.NONE
 local nocolor = colors.none
 
--- local function setTerminalColors()
-  vg.terminal_color_0 = colors.bg
-  vg.terminal_color_1 = colors.red
-  vg.terminal_color_2 = colors.green
-  vg.terminal_color_3 = colors.yellow
-  vg.terminal_color_4 = colors.blue
-  vg.terminal_color_5 = colors.violet
-  vg.terminal_color_6 = colors.cyan
-  vg.terminal_color_7 = colors.bg1
-  vg.terminal_color_8 = colors.brown
-  vg.terminal_color_9 = colors.red
-  vg.terminal_color_10 = colors.green
-  vg.terminal_color_11 = colors.yellow
-  vg.terminal_color_12 = colors.blue
-  vg.terminal_color_13 = colors.violet
-  vg.terminal_color_14 = colors.cyan
-  vg.terminal_color_15 = colors.fg
--- end
+vg.colors_name = 'noogies'
 
--- setTerminalColors()
-
--- local function setNvimColors()
+local function setNvimColors()
 
   Group.new('Boolean', colors.orange, nocolor, nostyle)
   Group.new('Character', colors.green, nocolor, nostyle)
@@ -106,13 +85,11 @@ local nocolor = colors.none
   Group.new('SpellLocal', colors.cyan, nocolor, ucurl)
   Group.new('SpellRare', colors.violet, nocolor, ucurl)
   Group.new('Statement', colors.red, nocolor, nostyle)
-  Group.new('StatusLine', colors.base8, colors.base2, nocolor)
-  Group.new('StatusLineNC', colors.grey, colors.base2, nocolor)
+  Group.new('StatusLine', colors.base8, colors.base2, nostyle)
+  Group.new('StatusLineTermNC', colors.grey, colors.base2, nostyle)
   Group.new('StorageClass', colors.orange, nocolor, nostyle)
   Group.new('String', colors.indigo, nocolor, italic)
   Group.new('Structure', colors.orange, nocolor, nostyle)
-  -- Group.new('TabLineFill', nocolor, nocolor, nostyle)
-  -- Group.new('TabLineSel', nocolor, colors.blue, nostyle)
   Group.new('Tag', colors.orange, nocolor, nostyle)
   Group.new('Terminal', colors.fg, colors.bg, nostyle)
   Group.new('Title', colors.orange, nocolor, bold)
@@ -127,17 +104,15 @@ local nocolor = colors.none
   Group.new('WarningMsg', colors.yellow, nocolor, bold)
   Group.new('Whitespace', colors.base4, nocolor, nostyle)
   Group.new('WildMenu', colors.fg, colors.green, nostyle)
-  Group.new('StatusLineTermNC', colors.grey, colors.base2, nostyle)
-  Group.new('StatusLine', colors.base8, colors.base2, nostyle)
--- end
+  -- Group.new('StatusLineNC'     , colors.grey    , colors.base2        , nocolor)
+  -- Group.new('TabLineFill', nocolor, nocolor, nostyle)
+  -- Group.new('TabLineSel', nocolor, colors.blue, nostyle)
+  -- StatusLineTerm -- extra
+  --  -- extra
+  -- TabLine -- extra
+end
 
--- StatusLineTerm -- extra
---  -- extra
--- TabLine -- extra
-
--- setNvimColors()
-
--- local function setPluginColors()
+local function setPluginColors()
   Group.new('CursorWord0', nocolor, colors.bg_cursor, nostyle)
   Group.new('CursorWord1', nocolor, colors.bg_cursor, nostyle)
 
@@ -145,10 +120,12 @@ local nocolor = colors.none
   -- Group.new {'TSFunction', colors.yellow, nocolor, nostyle}
   -- Group.new {'TSMethod', colors.yellow, nocolor, nostyle}
   -- Group.new {'TSType', colors.teal, nocolor, nostyle}
-  Group.new('TSKeywordFunction', colors.red, nocolor, nostyle)
-  Group.new('TSProperty', colors.cyan, nocolor, nostyle)
-  Group.new('TSPunctBracket', vg.bracket, nocolor, nostyle)
-
+  -- Group.new('TSParameter',          colors.Cyan,        nocolor, nostyle)
+  -- Group.new('TSStringEscape',       colors.Orange,      c.none, no)
+  -- Group.new('TSStringRegex',        colors.Red,         c.none, no)
+  -- Group.new('TSVariable',           colors.Cyan,        c.none, no)
+  -- Group.new('TSVariableBuiltin',    colors.Orange,      c.none, no)
+  Group.new("TSMethod", vg.Function, nocolor, nostyle)
   Group.new('TSBoolean', vg.Boolean, nocolor, nostyle)
   Group.new('TSCharacter', vg.Character, nocolor, nostyle)
   Group.new('TSConditional', vg.Conditional, nocolor, nostyle)
@@ -165,20 +142,17 @@ local nocolor = colors.none
   Group.new('TSFunction', vg.Function, nocolor, nostyle)
   Group.new('TSInclude', vg.Include, nocolor, nostyle)
   Group.new('TSKeyword', vg.Keyword, nocolor, nostyle)
+  Group.new('TSKeywordFunction', colors.red, nocolor, nostyle)
   Group.new('TSLabel', vg.Label, nocolor, nostyle)
-  Group.new("TSMethod", vg.Function, nocolor, nostyle)
   Group.new('TSNumber', vg.Number, nocolor, nostyle)
   Group.new('TSOperator', vg.Operator, nocolor, nostyle)
-  -- Group.new('TSParameter',          colors.Cyan,        nocolor, nostyle)
+  Group.new('TSProperty', colors.cyan, nocolor, nostyle)
+  Group.new('TSPunctBracket', vg.bracket, nocolor, nostyle)
   Group.new('TSString', vg.String, nocolor, nostyle)
-  -- Group.new('TSStringEscape',       colors.Orange,      c.none, no)
-  -- Group.new('TSStringRegex',        colors.Red,         c.none, no)
   Group.new('TSStructure', vg.Structure, nocolor, nostyle)
   Group.new('TSTagDelimiter', vg.Delimiter, nocolor, nostyle)
   Group.new('TSType', vg.Type, nocolor, nostyle)
   Group.new('TSTypeBuiltin', vg.Type, nocolor, nostyle)
-  -- Group.new('TSVariable',           colors.Cyan,        c.none, no)
-  -- Group.new('TSVariableBuiltin',    colors.Orange,      c.none, no)
 
   Group.new('vimCommentTitle', colors.grey, nocolor, bold)
   Group.new('vimLet', colors.orange, nocolor, nostyle)
@@ -271,26 +245,27 @@ local nocolor = colors.none
   Group.new('TelescopePromptBorder', colors.blue, nocolor, nostyle)
 
   -- whichkey.nvim
-  Group.new('WhichKeyFloat', nocolor, colors.wk_popup)
+  Group.new('WhichKeyFloat', nocolor, colors.wk_popup, nostyle)
 
   -- barbar
-  Group.new('TabLineVis', colors.fg, colors.bg_tab_visible)
-  Group.new("BufferCurrent", colors.tabCur_fg, colors.tabCur_bg)
-  Group.new("BufferCurrentMod", colors.tabMod, colors.tabCur_bg)
-  Group.new("BufferCurrentSign", colors.tabSign, colors.tabCur_bg)
-  Group.new("BufferCurrentTarget", colors.tabTar, colors.tabCur_bg)
-  Group.new("BufferVisible", colors.tabVis, colors.tabVis_bg)
-  Group.new("BufferVisibleMod", colors.tabMod, colors.tabVis_bg)
-  Group.new("BufferVisibleSign", colors.tabSign, colors.tabVis_bg)
-  Group.new("BufferVisibleTarget", colors.tabTar, colors.tabVis_bg)
-  Group.new("BufferInactive", colors.tabVis, colors.tabInactive_bg)
-  Group.new("BufferInactiveMod", colors.tabMod, colors.tabInactive_bg)
-  Group.new("BufferInactiveSign", colors.tabSign, colors.tabInactive_bg)
-  Group.new("BufferInactiveTarget", colors.tabTar, colors.tabInactive_bg)
+  Group.new('TabLineVis', colors.fg, colors.bg_tab_visible, nostyle)
+  Group.new("BufferCurrent", colors.tabCur_fg, colors.tabCur_bg, nostyle)
+  Group.new("BufferCurrentMod", colors.tabMod, colors.tabCur_bg, nostyle)
+  Group.new("BufferCurrentSign", colors.tabSign, colors.tabCur_bg, nostyle)
+  Group.new("BufferCurrentTarget", colors.tabTar, colors.tabCur_bg, nostyle)
+  Group.new("BufferVisible", colors.tabVis, colors.tabVis_bg, nostyle)
+  Group.new("BufferVisibleMod", colors.tabMod, colors.tabVis_bg, nostyle)
+  Group.new("BufferVisibleSign", colors.tabSign, colors.tabVis_bg, nostyle)
+  Group.new("BufferVisibleTarget", colors.tabTar, colors.tabVis_bg, nostyle)
+  Group.new("BufferInactive", colors.tabVis, colors.tabInactive_bg, nostyle)
+  Group.new("BufferInactiveMod", colors.tabMod, colors.tabInactive_bg, nostyle)
+  Group.new("BufferInactiveSign", colors.tabSign, colors.tabInactive_bg, nostyle)
+  Group.new("BufferInactiveTarget", colors.tabTar, colors.tabInactive_bg, nostyle)
 
--- not sure if i still use this somewhere
--- Group.new("Todo", colors.extTodo, colors.none, styles.bold)
--- Group.new('luaTodo', groups.Todo, colors.none, styles.bold)
--- end
+  -- not sure if i still use this somewhere
+  -- Group.new("Todo", colors.extTodo, colors.none, styles.bold)
+  -- Group.new('luaTodo', groups.Todo, colors.none, styles.bold)
+end
 
--- setPluginColors()
+setNvimColors()
+setPluginColors()
