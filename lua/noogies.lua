@@ -19,7 +19,7 @@ vg.colors_name = 'noogies'
 
 -- local function setNvimColors()
 
-Group.new('Boolean', colors.orange, nocolor, nostyle)
+Group.new('Boolean', colors.brick, nocolor, nostyle)
 Group.new('Bracket', colors.bracket, nocolor, nostyle)
 Group.new('Character', colors.green, nocolor, nostyle)
 Group.new('ColorColumn', nocolor, colors.bg_highlight, nostyle)
