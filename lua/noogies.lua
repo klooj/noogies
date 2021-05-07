@@ -1,3 +1,11 @@
+local should_reload = true
+local reloader = function()
+  if should_reload then
+    R('colorbuddy')
+    R('noogies')
+  end
+end
+
 local vg = vim.g
 local M = {}
 local Group = require('colorbuddy.group').Group
@@ -282,7 +290,18 @@ M.seeThroughToggle = function()
   end
 
 end
-return M
+return setmetatable({}, {
+  __index = function(_, k)
+    reloader()
+
+    if M[k] then
+      return M[k]
+    else
+      return require('noogies')
+    end
+  end
+})
+-- return M
 
 ---
 -- Group.new('StatusLineNC'     , colors.grey    , colors.base2        , nocolor)
