@@ -8,7 +8,7 @@ end
 local should_reload = true
 local reloader = function()
   if should_reload then
-    rld('colorbuddy')
+    -- rld('colorbuddy')
     rld('noogies')
   end
 end
