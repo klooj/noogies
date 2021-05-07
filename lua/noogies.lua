@@ -1,18 +1,15 @@
-local relmod = require('plenary.reload').reload_module
-
-local rld = function(name)
-  relmod(name)
-  return require(name)
-end
-
-local should_reload = true
-local reloader = function()
-  if should_reload then
-    -- rld('colorbuddy')
-    rld('noogies')
-  end
-end
-
+-- local relmod = require('plenary.reload').reload_module
+-- local rld = function(name)
+--   relmod(name)
+--   return require(name)
+-- end
+-- local should_reload = true
+-- local reloader = function()
+--   if should_reload then
+--     -- rld('colorbuddy')
+--     rld('noogies')
+--   end
+-- end
 local vg = vim.g
 local M = {}
 local Group = require('colorbuddy.group').Group
@@ -280,35 +277,34 @@ end
 M.setNvimColors()
 M.setPluginColors()
 
-M.seeThrough = function()
-  Group.new('Normal', nocolor, nocolor, nostyle)
-  -- Group.new('CursorLine', nocolor, nocolor, nostyle)
-end
+-- M.seeThrough = function()
+-- Group.new('Normal', nocolor, nocolor, nostyle)
+-- Group.new('CursorLine', nocolor, nocolor, nostyle)
+-- end
 
 M.seeThroughToggle = function()
-
-  if vg.seethrough then
+  if vg.seethrough == 0 then
     Group.new('Normal', colors.fg, colors.bg, nostyle)
     -- Group.new('CursorLine', nocolor, colors.bg_highlight, nostyle)
-    vg.seethrough = false
-  else
-    M.seeThrough()
-    vg.seethrough = true
+    vg.seethrough = 1
+  elseif vg.seeThrough == 1 then
+    Group.new('Normal', nocolor, nocolor, nostyle)
+    vg.seethrough = 0
   end
-
 end
-return setmetatable({}, {
-  __index = function(_, k)
-    reloader()
 
-    if M[k] then
-      return M[k]
-    else
-      return require('noogies')
-    end
-  end
-})
--- return M
+-- return setmetatable({}, {
+--   __index = function(_, k)
+--     reloader()
+
+--     if M[k] then
+--       return M[k]
+--     else
+--       return require('noogies')
+--     end
+--   end
+-- })
+return M
 
 ---
 -- Group.new('StatusLineNC'     , colors.grey    , colors.base2        , nocolor)
