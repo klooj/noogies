@@ -266,14 +266,18 @@ M.setNvimColors()
 M.setPluginColors()
 
 M.seeThrough = function()
+  Group.new('Normal', nocolor, nocolor, nostyle)
+  Group.new('CursorLine', nocolor, nocolor, nostyle)
+end
+
+M.seeThroughToggle = function()
 
   if vg.seethrough then
     M.setNvimColors()
     M.setPluginColors()
-    vg.seethrough = nil
+    vg.seethrough = false
   else
-    vim.cmd [[hi! Normal guibg=NONE ctermbg=NONE]]
-    vim.cmd [[hi! CursorLine guibg=#101924 ]]
+    M.seeThrough()
     vg.seethrough = true
   end
 
