@@ -1,15 +1,15 @@
--- local relmod = require('plenary.reload').reload_module
--- local rld = function(name)
---   relmod(name)
---   return require(name)
--- end
--- local should_reload = true
--- local reloader = function()
---   if should_reload then
---     -- rld('colorbuddy')
---     rld('noogies')
---   end
--- end
+local relmod = require('plenary.reload').reload_module
+local rld = function(name)
+  relmod(name)
+  return require(name)
+end
+local should_reload = true
+local reloader = function()
+  if should_reload then
+    -- rld('colorbuddy')
+    rld('noogies')
+  end
+end
 local vg = vim.g
 local M = {}
 local Group = require('colorbuddy.group').Group
@@ -293,18 +293,18 @@ M.seeThroughToggle = function()
   end
 end
 
--- return setmetatable({}, {
---   __index = function(_, k)
---     reloader()
+return setmetatable({}, {
+  __index = function(_, k)
+    reloader()
 
---     if M[k] then
---       return M[k]
---     else
---       return require('noogies')
---     end
---   end
--- })
-return M
+    if M[k] then
+      return M[k]
+    else
+      return require('noogies')
+    end
+  end
+})
+-- return M
 
 ---
 -- Group.new('StatusLineNC'     , colors.grey    , colors.base2        , nocolor)
