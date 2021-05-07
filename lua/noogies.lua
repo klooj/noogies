@@ -15,7 +15,7 @@ local rev = styles.reverse
 local nostyle = styles.NONE
 local nocolor = colors.none
 
-local function setTerminalColors()
+-- local function setTerminalColors()
   vg.terminal_color_0 = colors.bg
   vg.terminal_color_1 = colors.red
   vg.terminal_color_2 = colors.green
@@ -32,11 +32,11 @@ local function setTerminalColors()
   vg.terminal_color_13 = colors.violet
   vg.terminal_color_14 = colors.cyan
   vg.terminal_color_15 = colors.fg
-end
+-- end
 
-setTerminalColors()
+-- setTerminalColors()
 
-local function setNvimColors()
+-- local function setNvimColors()
 
   Group.new('Boolean', colors.orange, nocolor, nostyle)
   Group.new('Character', colors.green, nocolor, nostyle)
@@ -129,15 +129,15 @@ local function setNvimColors()
   Group.new('WildMenu', colors.fg, colors.green, nostyle)
   Group.new('StatusLineTermNC', colors.grey, colors.base2, nostyle)
   Group.new('StatusLine', colors.base8, colors.base2, nostyle)
-end
+-- end
 
 -- StatusLineTerm -- extra
 --  -- extra
 -- TabLine -- extra
 
-setNvimColors()
+-- setNvimColors()
 
-local function setPluginColors()
+-- local function setPluginColors()
   Group.new('CursorWord0', nocolor, colors.bg_cursor, nostyle)
   Group.new('CursorWord1', nocolor, colors.bg_cursor, nostyle)
 
@@ -291,6 +291,6 @@ local function setPluginColors()
 -- not sure if i still use this somewhere
 -- Group.new("Todo", colors.extTodo, colors.none, styles.bold)
 -- Group.new('luaTodo', groups.Todo, colors.none, styles.bold)
-end
+-- end
 
-setPluginColors()
+-- setPluginColors()
