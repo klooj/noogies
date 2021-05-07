@@ -267,14 +267,14 @@ M.setPluginColors()
 
 M.seeThrough = function()
   Group.new('Normal', nocolor, nocolor, nostyle)
-  Group.new('CursorLine', nocolor, nocolor, nostyle)
+  -- Group.new('CursorLine', nocolor, nocolor, nostyle)
 end
 
 M.seeThroughToggle = function()
 
   if vg.seethrough then
     Group.new('Normal', colors.fg, colors.bg, nostyle)
-    Group.new('CursorLine', nocolor, colors.bg_highlight, nostyle)
+    -- Group.new('CursorLine', nocolor, colors.bg_highlight, nostyle)
     vg.seethrough = false
   else
     M.seeThrough()
