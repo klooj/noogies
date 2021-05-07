@@ -272,6 +272,25 @@ local function setPluginColors()
 
   -- whichkey.nvim
   Group.new('WhichKeyFloat', nocolor, colors.wk_popup)
+
+  -- barbar
+  Group.new('TabLineVis', colors.fg, colors.bg_tab_visible)
+  Group.new("BufferCurrent", colors.tabCur_fg, colors.tabCur_bg)
+  Group.new("BufferCurrentMod", colors.tabMod, colors.tabCur_bg)
+  Group.new("BufferCurrentSign", colors.tabSign, colors.tabCur_bg)
+  Group.new("BufferCurrentTarget", colors.tabTar, colors.tabCur_bg)
+  Group.new("BufferVisible", colors.tabVis, colors.tabVis_bg)
+  Group.new("BufferVisibleMod", colors.tabMod, colors.tabVis_bg)
+  Group.new("BufferVisibleSign", colors.tabSign, colors.tabVis_bg)
+  Group.new("BufferVisibleTarget", colors.tabTar, colors.tabVis_bg)
+  Group.new("BufferInactive", colors.tabVis, colors.tabInactive_bg)
+  Group.new("BufferInactiveMod", colors.tabMod, colors.tabInactive_bg)
+  Group.new("BufferInactiveSign", colors.tabSign, colors.tabInactive_bg)
+  Group.new("BufferInactiveTarget", colors.tabTar, colors.tabInactive_bg)
+
+-- not sure if i still use this somewhere
+-- Group.new("Todo", colors.extTodo, colors.none, styles.bold)
+-- Group.new('luaTodo', groups.Todo, colors.none, styles.bold)
 end
 
 setPluginColors()
