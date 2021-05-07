@@ -273,8 +273,8 @@ end
 M.seeThroughToggle = function()
 
   if vg.seethrough then
-    M.setNvimColors()
-    M.setPluginColors()
+    Group.new('Normal', colors.fg, colors.bg, nostyle)
+    Group.new('CursorLine', nocolor, colors.bg_highlight, nostyle)
     vg.seethrough = false
   else
     M.seeThrough()
