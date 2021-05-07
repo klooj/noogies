@@ -1,8 +1,15 @@
+local relmod = require('plenary.reload').reload_module
+
+local rld = function(name)
+  relmod(name)
+  return require(name)
+end
+
 local should_reload = true
 local reloader = function()
   if should_reload then
-    R('colorbuddy')
-    R('noogies')
+    rld('colorbuddy')
+    rld('noogies')
   end
 end
 
