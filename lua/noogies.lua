@@ -211,8 +211,11 @@ M.setPluginColors = function()
   Group.new('NvimTreeNormal', nocolor, colors.bg_tree, nostyle)
 
   -- telescope
-  Group.new('TelescopeBorder', colors.teal, nocolor, nostyle)
-  Group.new('TelescopePromptBorder', colors.blue, nocolor, nostyle)
+  Group.new('TelescopeBorder', colors.orange, nocolor, nostyle)
+  Group.new('TelescopePreviewBorder', colors.magenta, nocolor, nostyle)
+  Group.new('TelescopeSelectionCaret', colors.red, nocolor, nostyle)
+  Group.new('TelescopeNormal', nocolor, colors.black, nostyle)
+  Group.new('TelescopeSelection', nocolor, nocolor, bold)
 
   -- whichkey.nvim
   Group.new('WhichKeyFloat', nocolor, colors.wk_popup, nostyle)
@@ -250,11 +253,17 @@ end
 return M
 
 ---
--- Group.new('StatusLineNC'     , colors.grey    , colors.base2        , nocolor)
--- Group.new('TabLineSel', nocolor, colors.blue, nostyle)
--- StatusLineTerm -- extra
---  -- extra
--- TabLine -- extra
--- not sure if i still use this somewhere
--- Group.new("Todo", colors.extTodo, colors.none, styles.bold)
--- Group.new('luaTodo', groups.Todo, colors.none, styles.bold)
+--[[
+Group.new('StatusLineNC'     , colors.grey    , colors.base2        , nocolor)
+Group.new('TabLineSel', nocolor, colors.blue, nostyle)
+StatusLineTerm -- extra
+TabLine -- extra
+Group.new("Todo", colors.extTodo, colors.none, styles.bold)
+Group.new('luaTodo', groups.Todo, colors.none, styles.bold)
+Group.new('TelescopeMultiSelection ', c.Grey_2,      c.none,   no)
+Group.new('TelescopeResultsBorder',   c.DarkOrange,  c.none,   no)
+Group.new('TelescopePreviewBorder',   c.DarkMagenta, c.none,   no)
+Group.new('TelescopeMatching ',       c.Yellow,      c.none,   no)
+Group.new('TelescopePromptPrefix',    c.Red,         c.none,   no)
+Group.new('TelescopePrompt',          c.Red,         c.none,   no)
+]]
