@@ -267,3 +267,95 @@ Group.new('TelescopeMatching ',       c.Yellow,      c.none,   no)
 Group.new('TelescopePromptPrefix',    c.Red,         c.none,   no)
 Group.new('TelescopePrompt',          c.Red,         c.none,   no)
 ]]
+
+--[[ pandoc defaults
+hi link pandocOperator Operator
+hi pandocTitleBlock term=italic gui=italic -- override this for consistency
+hi link pandocTitleBlockTitle Directory
+hi link pandocAtxHeader Title
+hi link pandocAtxStart Operator
+hi link pandocSetexHeader Title
+hi link pandocHeaderAttr Comment
+hi link pandocHeaderID Identifier
+
+hi link pandocLaTexSectionCmd texSection
+hi link pandocLaTeXDelimiter texDelimiter
+
+hi link pandocHTMLComment Comment
+hi link pandocHTMLCommentStart Delimiter
+hi link pandocHTMLCommentEnd Delimiter
+hi link pandocBlockQuote Comment
+hi link pandocBlockQuoteMark Comment
+hi link pandocAmpersandEscape Special
+
+hi link pandocCodeBlockInsideIndent String
+hi link pandocDelimitedCodeBlock Special
+
+hi link pandocDelimitedCodeBlockStart Delimiter
+hi link pandocDelimitedCodeBlockEnd Delimiter
+hi link pandocDelimitedCodeBlockLanguage Comment
+hi link pandocBlockQuoteinDelimitedCodeBlock pandocBlockQuote
+hi link pandocCodePre String
+
+hi link pandocLineBlockDelimiter Delimiter
+
+hi link pandocListItemBullet Operator
+hi link pandocUListItemBullet Operator
+hi link pandocListItemBulletId Identifier
+
+hi link pandocReferenceLabel Label
+hi link pandocReferenceURL Underlined
+hi link pandocLinkTip Identifier
+hi link pandocImageIcon Operator
+
+hi link pandocReferenceDefinition Operator
+hi link pandocReferenceDefinitionLabel Label
+hi link pandocReferenceDefinitionAddress Underlined
+hi link pandocReferenceDefinitionTip Identifier
+
+hi link pandocAutomaticLink Underlined
+
+hi link pandocDefinitionBlockTerm Identifier
+hi link pandocDefinitionBlockMark Operator
+
+hi link pandocSimpleTableDelims Delimiter
+hi link pandocSimpleTableHeader pandocStrong
+hi link pandocTableMultilineHeader pandocStrong
+hi link pandocTableDelims Delimiter
+hi link pandocGridTableDelims Delimiter
+hi link pandocGridTableHeader Delimiter
+hi link pandocPipeTableDelims Delimiter
+hi link pandocPipeTableHeader Delimiter
+hi link pandocTableHeaderWord pandocStrong
+
+hi link pandocAbbreviationHead Type
+hi link pandocAbbreviation Label
+hi link pandocAbbreviationTail Type
+hi link pandocAbbreviationSeparator Identifier
+hi link pandocAbbreviationDefinition Comment
+
+hi link pandocFootnoteID Label
+hi link pandocFootnoteIDHead Type
+hi link pandocFootnoteIDTail Type
+hi link pandocFootnoteDef Comment
+hi link pandocFootnoteDefHead Type
+hi link pandocFootnoteDefTail Type
+hi link pandocFootnoteBlock Comment
+hi link pandocFootnoteBlockSeparator Operator
+
+hi link pandocPCite Operator
+hi link pandocICite Operator
+hi link pandocCiteKey Label
+hi link pandocCiteAnchor Operator
+hi link pandocCiteLocator Operator
+
+hi link pandocNoFormatted String
+hi link pandocNoFormattedAttrs Comment
+hi link pandocSubscriptMark Operator
+hi link pandocSuperscriptMark Operator
+hi link pandocStrikeoutMark Operator
+
+hi link pandocNewLine Error
+hi link pandocHRule Delimiter
+
+]]
