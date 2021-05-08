@@ -184,26 +184,30 @@ M.setPluginColors = function()
   Group.new('SignifySignDelete', colors.red, nocolor, nostyle)
 
   -- LSP
+  Group.new('LspDiagnosticsDefaultError', colors.red, nocolor, nostyle)
+  Group.new('LspDiagnosticsFloatingError', colors.red, nocolor, nostyle)
   Group.new('LspDiagnosticsSignError', colors.red, nocolor, nostyle)
-  Group.new('LspDiagnosticsSignWarning', colors.yellow, nocolor, nostyle)
-  Group.new('LspDiagnosticsSignInformation', colors.blue, nocolor, nostyle)
   Group.new('LspDiagnosticsSignHint', colors.cyan, nocolor, nostyle)
-
-  Group.new('LspDiagnosticsVirtualTextError', colors.red, nocolor, italic)
-  Group.new('LspDiagnosticsVirtualTextWarning', colors.yellow, nocolor, italic)
-  Group.new('LspDiagnosticsVirtualTextInformation', colors.teal, nocolor, italic)
-  Group.new('LspDiagnosticsVirtualTextHint', colors.teal, nocolor, italic)
-
+  Group.new('LspDiagnosticsSignInformation', colors.blue, nocolor, nostyle)
+  Group.new('LspDiagnosticsSignWarning', colors.yellow, nocolor, nostyle)
   Group.new('LspDiagnosticsUnderlineError', nocolor, nocolor, ucurl, colors.red)
-  Group.new('LspDiagnosticsUnderlineWarning', nocolor, nocolor, ucurl, colors.yellow)
-  Group.new('LspDiagnosticsUnderlineInformation', nocolor, nocolor, ucurl, colors.blue)
   Group.new('LspDiagnosticsUnderlineHint', nocolor, nocolor, ucurl, colors.cyan)
+  Group.new('LspDiagnosticsUnderlineInformation', nocolor, nocolor, ucurl, colors.blue)
+  Group.new('LspDiagnosticsUnderlineWarning', nocolor, nocolor, ucurl, colors.yellow)
+  Group.new('LspDiagnosticsVirtualTextError', colors.red, nocolor, italic)
+  Group.new('LspDiagnosticsVirtualTextHint', colors.teal, nocolor, italic)
+  Group.new('LspDiagnosticsVirtualTextInformation', colors.teal, nocolor, italic)
+  Group.new('LspDiagnosticsVirtualTextWarning', colors.yellow, nocolor, italic)
+
+  -- lsp saga
+  Group.new('DiagnosticError', colors.red, nocolor, italic)
 
   -- nv tree
   Group.new('NvimTreeFolderName', colors.dark_blue, nocolor, nostyle)
   Group.new('NvimTreeRootFolder', colors.red, nocolor, nostyle)
   Group.new('NvimTreeSpecialFile', colors.fg, nocolor, nostyle)
   Group.new('NvimTreeNormal', nocolor, colors.bg_tree, nostyle)
+  Group.new('NvimTreeFolderIcon', colors.peru, nocolor, nostyle)
 
   -- telescope
   Group.new('TelescopeBorder', colors.orange, nocolor, nostyle)
