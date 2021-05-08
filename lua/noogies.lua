@@ -115,12 +115,7 @@ M.setPluginColors = function()
   Group.new('CursorWord1', nocolor, colors.bg_cursor, nostyle)
 
   -- treesitter
-  -- Group.new {'TSFunction', colors.yellow, nocolor, nostyle}
-  -- Group.new {'TSMethod', colors.yellow, nocolor, nostyle}
-  -- Group.new {'TSType', colors.teal, nocolor, nostyle}
   Group.new('TSParameter', colors.indigo, nocolor, nostyle)
-  -- Group.new('TSStringEscape',       colors.Orange,      c.none, no)
-  -- Group.new('TSStringRegex',        colors.Red,         c.none, no)
   Group.new('TSVariable', colors.blue, nocolor, nostyle)
   Group.new('TSVariableBuiltin', colors.orange, nocolor, nostyle)
   Group.new("TSMethod", g.Function, nocolor, nostyle)
@@ -142,11 +137,14 @@ M.setPluginColors = function()
   Group.new('TSKeyword', g.Keyword, nocolor, nostyle)
   Group.new('TSKeywordFunction', colors.red, nocolor, nostyle)
   Group.new('TSLabel', g.Label, nocolor, nostyle)
+  Group.new('TSMethod', g.Function, nocolor, nostyle)
   Group.new('TSNumber', g.Number, nocolor, nostyle)
   Group.new('TSOperator', g.Operator, nocolor, nostyle)
-  Group.new('TSProperty', colors.cyan, nocolor, nostyle)
+  Group.new('TSProperty', colors.teal, nocolor, nostyle)
   Group.new('TSPunctBracket', g.bracket, nocolor, nostyle)
   Group.new('TSString', nocolor, nocolor, nostyle)
+  Group.new('TSStringEscape', colors.Orange, nocolor, nostyle)
+  Group.new('TSStringRegex', colors.Red, nocolor, nostyle)
   Group.new('TSStructure', g.Structure, nocolor, nostyle)
   Group.new('TSTagDelimiter', g.Delimiter, nocolor, nostyle)
   Group.new('TSType', g.Type, nocolor, nostyle)
@@ -189,32 +187,6 @@ M.setPluginColors = function()
   Group.new('SignifySignAdd', colors.green, nocolor, nostyle)
   Group.new('SignifySignChange', colors.blue, nocolor, nostyle)
   Group.new('SignifySignDelete', colors.red, nocolor, nostyle)
-
-  --[[vista
-    Group.new{'VistaBracket'                         , colors.grey      , nocolor          , nostyle}
-    Group.new{'VistaChildrenNr'                      , colors.orange    , nocolor          , nostyle}
-    Group.new{'VistaKind'                            , colors.purple    , nocolor          , nostyle}
-    Group.new{'VistaScope'                           , colors.red       , nocolor          , nostyle}
-    Group.new{'VistaScopeKind'                       , colors.blue      , nocolor          , nostyle}
-    Group.new{'VistaTag'                             , colors.green     , bold}
-    Group.new{'VistaPrefix'                          , colors.grey      , nocolor          , nostyle}
-    Group.new{'VistaColon'                           , colors.green     , nocolor          , nostyle}
-    Group.new{'VistaIcon'                            , colors.yellow    , nocolor          , nostyle}
-    Group.new{'VistaLineNr'                          , colors.fg        , nocolor          , nostyle}
-    ]]
-
-  Group.new('dbui_tables', colors.blue, nocolor, nostyle)
-
-  -- Group.new{'DefxIconsParentDirectory'             , colors.orange    , nocolor          , nostyle}
-  -- Group.new{'Defx_filename_directory'              , colors.blue      , nocolor          , nostyle}
-  -- Group.new{'Defx_filename_root'                   , colors.red       , nocolor          , nostyle}
-
-  --[[dashboard
-    Group.new{'DashboardShortCut'                    , colors.violet    , nocolor          , nostyle}
-    Group.new{'DashboardHeader'                      , colors.orange    , nocolor          , nostyle}
-    Group.new{'DashboardCenter'                      , colors.blue      , nocolor          , nostyle}
-    Group.new{'DashboardFooter'                      , colors.grey      , nocolor          , nostyle}
-    ]]
 
   -- LSP
   Group.new('LspDiagnosticsSignError', colors.red, nocolor, nostyle)
@@ -270,7 +242,6 @@ M.seeThrough = function()
     vim.cmd [[hi! Normal guibg='#282c34']]
     vg.seethrough = false
   else
-    -- Group.new('Normal', nocolor, nocolor, nostyle)
     vim.cmd [[hi! Normal guibg=NONE]]
     vg.seethrough = true
   end
